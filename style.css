@@ -1,0 +1,226 @@
+#intro-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  animation: screenFade 3s ease forwards 2.5s;
+}
+
+/* 🖼 LOGO IMAGE */
+.intro-logo {
+  width: 140px;
+  height: auto;
+
+  opacity: 0;
+  transform: scale(0.5);
+
+  animation: logoFade 2s ease forwards;
+  filter: drop-shadow(0 0 15px white);
+}
+
+/* 🎬 ANIMATION */
+@keyframes logoFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes screenFade {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  position: relative;
+
+  background: radial-gradient(circle at top,
+    #0b0f2a,
+    #050816,
+    #000000);
+}
+
+
+
+.calculator {
+  width: 360px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+}
+
+/* ✅ DISPLAY FIX */
+#display {
+  width: 100%;
+  height: 70px;
+  font-size: 26px;
+  text-align: right;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: white;
+  background: rgba(255,255,255,0.1);
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+/* GRID FIX */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* BUTTON STYLE */
+button {
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+/* HOVER */
+button:hover,.active-glow {
+  background: #00f5d4;
+  box-shadow: 0 0 10px #00f5d4;
+}
+
+/* CLICK */
+button:active {
+  transform: scale(0.95);
+}
+
+/* TYPES */
+.op { background: #ff7b00; }
+.equal { background: #00c853; grid-column: span 2; }
+.sci { background: #6a00f4; }
+
+/* 🔥 KEYBOARD GLOW */
+.key-active {
+  background: #00f5d4 !important;
+  box-shadow: 0 0 15px #00f5d4,
+              0 0 30px #00f5d4;
+  transform: scale(1.1);
+}
+
+.history {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  color: white;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#historyList {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.history button {
+  margin-top: 10px;
+  width: 100%;
+  background: #ff1744;
+  color: white;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+
+  background: radial-gradient(circle at top,
+    #0b0f2a,
+    #050816,
+    #000000);
+}
+
+/* ⭐ MOVING STARS */
+body::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+
+  opacity: 0.2;
+  animation: starsMove 80s linear infinite;
+}
+
+@keyframes starsMove {
+  from { transform: translateY(0); }
+  to { transform: translateY(-1200px); }
+}
+
+
+/* 💫 SHOOTING STAR */
+.shooting-star {
+  position: absolute;
+  width: 2px;
+  height: 80px;
+  background: white;
+  transform: rotate(45deg);
+  animation: shoot 1s linear forwards;
+}
+
+/* ANIMATIONS */
+@keyframes moveStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-1200px); }
+}
+
+@keyframes fog {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(200px); }
+  100% { transform: rotate(360deg) translateX(200px); }
+}
+
+@keyframes shoot {
+  from { opacity: 1; transform: translate(0,0) rotate(45deg); }
+  to { opacity: 0; transform: translate(-600px,600px) rotate(45deg); }
+}

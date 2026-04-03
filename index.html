@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Premium Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="icon.png">
+</head>
+
+<body>
+
+  <div id="intro-screen">
+  <img src="logo.png" class="intro-logo" alt="logo">
+</div>
+
+<div class="calculator">
+  <input type="text" id="display">
+
+  <div class="buttons">
+
+    <button data-key="Escape" class="op" onclick="clearDisplay()">AC</button>
+    <button data-key="Backspace" class="op" onclick="deleteLast()">⌫</button>
+    <button data-key="%" class="op" onclick="append('%')">%</button>
+    <button data-key="/" class="op" onclick="append('/')">÷</button>
+
+    <button data-key="7" onclick="append('7')">7</button>
+    <button data-key="8" onclick="append('8')">8</button>
+    <button data-key="9" onclick="append('9')">9</button>
+    <button data-key="*" class="op" onclick="append('*')">×</button>
+
+    <button data-key="4" onclick="append('4')">4</button>
+    <button data-key="5" onclick="append('5')">5</button>
+    <button data-key="6" onclick="append('6')">6</button>
+    <button data-key="-" class="op" onclick="append('-')">−</button>
+
+    <button data-key="1" onclick="append('1')">1</button>
+    <button data-key="2" onclick="append('2')">2</button>
+    <button data-key="3" onclick="append('3')">3</button>
+    <button data-key="+" class="op" onclick="append('+')">+</button>
+
+    <button data-key="0" onclick="append('0')">0</button>
+    <button data-key="." onclick="append('.')">.</button>
+    <button data-key="Enter" class="equal" onclick="calculate()">=</button>
+
+  </div>
+
+<div class="history">
+  <h3>History</h3>
+  <div id="historyList"></div>
+  <button onclick="clearHistory()">Clear History</button>
+</div>
+
+</div>
+
+<div id="shooting-stars"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
