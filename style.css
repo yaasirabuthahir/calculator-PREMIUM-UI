@@ -48,6 +48,7 @@
 
 
 body {
+  padding: 10px;
   margin: 0;
   height: 100vh;
   display: flex;
@@ -66,7 +67,8 @@ body {
 
 
 .calculator {
-  width: 360px;
+  width: 90%;
+  max-width: 360px;
   padding: 20px;
   border-radius: 20px;
   background: rgba(255,255,255,0.05);
@@ -77,8 +79,8 @@ body {
 /* ✅ DISPLAY FIX */
 #display {
   width: 100%;
-  height: 70px;
-  font-size: 26px;
+  height: 80px;
+  font-size: 28px;
   text-align: right;
   padding: 10px;
   margin-bottom: 15px;
@@ -100,8 +102,8 @@ body {
 
 /* BUTTON STYLE */
 button {
-  padding: 15px;
-  font-size: 16px;
+  padding: 18px;
+  font-size: 18px;
   border: none;
   border-radius: 10px;
   background: rgba(255,255,255,0.08);
@@ -223,4 +225,24 @@ body::before {
 @keyframes shoot {
   from { opacity: 1; transform: translate(0,0) rotate(45deg); }
   to { opacity: 0; transform: translate(-600px,600px) rotate(45deg); }
+}
+
+
+
+@media (max-width: 480px) {
+
+  .calculator {
+    width: 95%;
+    padding: 15px;
+  }
+
+  button {
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  #display {
+    height: 70px;
+    font-size: 24px;
+  }
 }
